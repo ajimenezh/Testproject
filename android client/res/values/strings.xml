@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">testproject</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="username">Username</string>
+    <string name="welcome">Welcome!</string>
+    <string name="send">Send</string>
+    <string name="invalid_username_empty">Please introduce a valid username. The field is empty</string>
+    <string name="action_create_topic">Create topic</string>
+    <string name="username_in_use">The username is already in use.</string>
+
+</resources>

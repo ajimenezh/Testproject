@@ -1,0 +1,29 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    tools:context="com.example.testproject.HomeActivity" >
+
+    <TextView
+        android:id="@+id/topic_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:text="Placeholder"
+        android:layout_margin="5dp"/>
+
+    <Button
+        android:id="@+id/follow_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/topic_title"
+        android:layout_below="@+id/topic_title"
+        android:layout_margin="5dp"
+        android:padding="5dp"
+        android:text="Follow"
+        android:textSize="12sp"
+        android:focusable="false"
+		android:focusableInTouchMode="false" />
+
+</RelativeLayout>

@@ -1,0 +1,27 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.testproject.MainActivity" >
+
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="100"
+        android:title="@string/action_settings"
+        app:showAsAction="never"/>
+    
+    <item android:id="@+id/action_create_topic"
+        android:icon="@drawable/ic_action_new_event"
+        android:title=""
+        android:showAsAction="always|withText"
+        app:showAsAction="always|withText"
+           />
+    
+    <item android:id="@+id/action_search"
+        android:icon="@drawable/ic_action_search"
+        android:title=""
+        android:showAsAction="always|withText"
+        app:showAsAction="always|withText"
+           />
+    
+
+</menu>
