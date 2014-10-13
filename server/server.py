@@ -23,14 +23,24 @@ def get_topics():
 
     try:
         with models.psql_db.transaction():
-            topics = models.Topic.select()
+            topics = models.Topic.select(models.Topic, models.fn.Count(models.Comment.comment_id).alias('comment_cnt')).join(models.Comment).group_by(models.Topic)
+            topics = models.Topic.select(models.Topic, models.fn.Count(models.Like.user_id) \
+                        .alias('likes_cnt'), models.fn.Count(models.Comment.user_id) \
+                        .alias('comments_cnt'))\
+                        .join(models.Like, join_type=models.peewee.JOIN_LEFT_OUTER)\
+                        .switch(models.Topic) \
+                        .join(models.Comment, join_type=models.peewee.JOIN_LEFT_OUTER) \
+                        .group_by(models.Topic)
     except:
         print ('Failure: Getting topics.')
         return 'Fail'
 
     v = []
     for t in topics:
-        v.append(t.toObject())
+        element = t.toObject()
+        element['comments_cnt'] = t.comments_cnt
+        element['likes_cnt'] = t.likes_cnt
+        v.append(element)
 
     return flask.jsonify({'results':v})
 
@@ -208,6 +218,39 @@ def register_gcm():
             user = models.User.get(user_id=user_id)
             user.gcm_id = gcmid
             user.save()
+    except models.peewee.IntegrityError:
+        print ('Failure: In follow.')
+        return "Fail"
+
+    return "Ok"
+
+
+@app.route('/like')
+def like():
+
+    user_id = request.args.get('user_id')
+    topic_id = request.args.get('topic_id')
+
+    try:
+        with models.psql_db.transaction():
+            models.Like.create(user_id=int(user_id), topic_id=int(topic_id))
+    except models.peewee.IntegrityError:
+        print ('Failure: In follow.')
+        return "Fail"
+
+    return "Ok"
+
+
+@app.route('/unlike')
+def unlike():
+
+    user_id = request.args.get('user_id')
+    topic_id = request.args.get('topic_id')
+
+    try:
+        with models.psql_db.transaction():
+            like = models.Like.get(models.Like.topic_id == int(topic_id))
+            like.delete_instance()
     except models.peewee.IntegrityError:
         print ('Failure: In follow.')
         return "Fail"

@@ -1,5 +1,5 @@
 import peewee
-
+from peewee import fn
 
 psql_db = peewee.PostgresqlDatabase('d25t4ouh6949q6', host='ec2-54-83-199-115.compute-1.amazonaws.com', port='5432', dbname='d25t4ouh6949q6', user='jqzsztkjoynriu', password='cErbo7-ZFppun0TfLkWEOZRd4N', sslmode='require')
 
@@ -46,21 +46,30 @@ class Follow(BaseModel):
     topic_id = peewee.ForeignKeyField(Topic, related_name='followers', index=True)
     user_id = peewee.ForeignKeyField(User, related_name='following')
 
+
+class Like(BaseModel):
+    topic_id = peewee.ForeignKeyField(Topic, related_name='likers', index=True)
+    user_id = peewee.ForeignKeyField(User, related_name='liking')
+
+
 class GcmId(BaseModel):
     gcm_id = peewee.CharField()
     user_id = peewee.ForeignKeyField(User)
 
 #psql_db.connect()
 #psql_db.drop_tables([User, Topic, Follow, Comment])
-#psql_db.create_tables([User, Topic, Follow, Comment])
+#psql_db.create_table(Like)
 
 #psql_db.connect()
-#v = Follow.select().where(Follow.topic_id=='2').join(user)
+#v = Topic.select(Topic, fn.Count(Like.user_id).alias('likes_cnt'), fn.Count(Comment.user_id).alias('comments_cnt')).join(Like, join_type=peewee.JOIN_LEFT_OUTER).switch(Topic).join(Comment, join_type=peewee.JOIN_LEFT_OUTER).group_by(Topic)
+
 
 #for t in v:
 #    print (t.topic_id)
 #    print (t.user_id)
-#    print (t.user_id.gcm_id)
+#    print (t.likes_cnt)
+#    print (t.comments_cnt)
+
 #try:
 #    user = User.create(username="Test")
 
