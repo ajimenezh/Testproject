@@ -223,6 +223,7 @@ public class TopicCommentsActivity extends ActionBarActivity
 			
 			refreshList(response);
 			
+			
 //			if (ajaxCall == null || ajaxCall.isCancelled()) {
 //				ajaxCall = new PseudoAjax();
 //				ajaxCall.execute();
@@ -272,6 +273,8 @@ public class TopicCommentsActivity extends ActionBarActivity
 		
 	}
 	
+	// A polling service to check if there is any new comment.
+	// The moment the activity is stopped, the AsyncTask is cancelled.
 	private class PseudoAjax extends AsyncTask<String, Void, Void> {
 
 

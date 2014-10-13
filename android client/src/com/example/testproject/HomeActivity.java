@@ -351,15 +351,18 @@ public class HomeActivity extends ActionBarActivity
 		try {
 			JSONArray arr = (JSONArray) (new JSONObject(response)).get("results");
 			
+			
 			for (int i=0; i<arr.length(); i++) {
-				
+								
 				JSONObject obj = (JSONObject) arr.get(i);
 				
 				Topic tp = new Topic();
 				tp.setTitle(obj.getString("title"));
 				tp.setId(obj.getString("topic_id"));
+				tp.setNumberComments(Integer.parseInt(obj.getString("comments_cnt")));
+				tp.setNumberLikes(Integer.parseInt(obj.getString("likes_cnt")));
 				tp.setJSON(obj.toString());
-				
+								
 				SharedPreferences prefs = getSharedPreferences(PREFS_DIR, Context.MODE_PRIVATE);
 				boolean following = prefs.getBoolean("topic_id=" + tp.getId(), false);
 				

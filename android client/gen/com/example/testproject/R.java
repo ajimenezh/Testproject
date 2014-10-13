@@ -1286,13 +1286,13 @@ containing a value of this type.
         public static final int action_bar_subtitle=0x7f060026;
         public static final int action_bar_title=0x7f060025;
         public static final int action_context_bar=0x7f060020;
-        public static final int action_create_topic=0x7f06004e;
+        public static final int action_create_topic=0x7f060051;
         public static final int action_create_topic_text=0x7f060044;
         public static final int action_menu_divider=0x7f060019;
         public static final int action_menu_presenter=0x7f06001a;
         public static final int action_mode_close_button=0x7f060027;
-        public static final int action_search=0x7f06004f;
-        public static final int action_settings=0x7f06004d;
+        public static final int action_search=0x7f060052;
+        public static final int action_settings=0x7f060050;
         public static final int activity_chooser_view_content=0x7f060028;
         public static final int add=0x7f060043;
         public static final int always=0x7f06000f;
@@ -1315,6 +1315,7 @@ containing a value of this type.
         public static final int icon=0x7f06002d;
         public static final int ifRoom=0x7f06000e;
         public static final int image=0x7f06002a;
+        public static final int like_btn=0x7f06004e;
         public static final int list=0x7f060042;
         public static final int listMode=0x7f060005;
         public static final int list_item=0x7f06002c;
@@ -1322,6 +1323,8 @@ containing a value of this type.
         public static final int never=0x7f06000d;
         public static final int none=0x7f060000;
         public static final int normal=0x7f060001;
+        public static final int number_comments=0x7f06004d;
+        public static final int number_likes=0x7f06004f;
         public static final int progressBar1=0x7f060047;
         public static final int progress_circular=0x7f06001b;
         public static final int progress_horizontal=0x7f06001c;

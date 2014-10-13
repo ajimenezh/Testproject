@@ -26,4 +26,39 @@
         android:focusable="false"
 		android:focusableInTouchMode="false" />
 
+    <TextView
+        android:id="@+id/number_comments"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/follow_btn"
+        android:layout_alignBottom="@+id/follow_btn"
+        android:layout_alignLeft="@+id/topic_title"
+        android:layout_marginLeft="14dp"
+        android:text="Small Text"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <Button
+        android:id="@+id/like_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/follow_btn"
+        android:layout_alignBottom="@+id/follow_btn"
+        android:layout_margin="5dp"
+        android:layout_toLeftOf="@+id/follow_btn"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:padding="5dp"
+        android:text="Like"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/number_likes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/like_btn"
+        android:layout_alignBottom="@+id/like_btn"
+        android:layout_toLeftOf="@+id/like_btn"
+        android:text="+6"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
 </RelativeLayout>

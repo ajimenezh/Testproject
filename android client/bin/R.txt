@@ -303,13 +303,13 @@ int id action_bar_root 0x7f06001d
 int id action_bar_subtitle 0x7f060026
 int id action_bar_title 0x7f060025
 int id action_context_bar 0x7f060020
-int id action_create_topic 0x7f06004e
+int id action_create_topic 0x7f060051
 int id action_create_topic_text 0x7f060044
 int id action_menu_divider 0x7f060019
 int id action_menu_presenter 0x7f06001a
 int id action_mode_close_button 0x7f060027
-int id action_search 0x7f06004f
-int id action_settings 0x7f06004d
+int id action_search 0x7f060052
+int id action_settings 0x7f060050
 int id activity_chooser_view_content 0x7f060028
 int id add 0x7f060043
 int id always 0x7f06000f
@@ -332,6 +332,7 @@ int id hybrid 0x7f060004
 int id icon 0x7f06002d
 int id ifRoom 0x7f06000e
 int id image 0x7f06002a
+int id like_btn 0x7f06004e
 int id list 0x7f060042
 int id listMode 0x7f060005
 int id list_item 0x7f06002c
@@ -339,6 +340,8 @@ int id middle 0x7f060015
 int id never 0x7f06000d
 int id none 0x7f060000
 int id normal 0x7f060001
+int id number_comments 0x7f06004d
+int id number_likes 0x7f06004f
 int id progressBar1 0x7f060047
 int id progress_circular 0x7f06001b
 int id progress_horizontal 0x7f06001c

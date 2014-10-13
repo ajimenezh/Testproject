@@ -6,6 +6,9 @@ public class Topic{
 	private String topicJSON;
 	private String topicId;
 	private boolean following = false;
+	private Integer numberComments = 0;
+	private boolean likes = false;
+	private int numberLikes = 0;
 	
 	public Topic() {
 	}
@@ -49,6 +52,38 @@ public class Topic{
 	public void unfollow() {
 
 		following = false;
+		
+	}
+	
+	public void setNumberComments(Integer n) {
+		this.numberComments = n;
+	}
+	
+	public Integer getNumberComments() {
+		return this.numberComments;
+	}
+
+	public boolean likes() {
+		return this.likes;
+	}
+	
+	public void like() {
+		this.likes  = true;
+	}
+	
+	public void dislike() {
+		this.likes = false;
+	}
+
+	public void setNumberLikes(int n) {
+
+		this.numberLikes  = n;
+		
+	}
+	
+	public Integer getNumberLikes() {
+
+		return this.numberLikes;
 		
 	}
 	
