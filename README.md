@@ -15,7 +15,7 @@ requests it still can happen that the SQL request returns an error.
 
 Topics
 ------
-The topics appear in the main activity when opening the app if you are registered. To create a new topic or search
+The topics appear in the main activity when opening the app if you are registered. To create a new topic or search,
 a fragment is opened, so the transitions are very fast. All the topics are stored in the SQL database and recovered 
 sorted by creation date.
 
